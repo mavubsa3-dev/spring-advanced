@@ -13,7 +13,7 @@ public class FilterConfig {
     private final JwtUtil jwtUtil;
     private final ObjectMapper objectMapper;
 
-    @Bean
+    //@Bean
     public FilterRegistrationBean<JwtFilter> jwtFilter() {
         FilterRegistrationBean<JwtFilter> registrationBean = new FilterRegistrationBean<>();
         registrationBean.setFilter(new JwtFilter(jwtUtil, objectMapper));
