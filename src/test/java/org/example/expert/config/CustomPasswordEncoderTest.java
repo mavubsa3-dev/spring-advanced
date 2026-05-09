@@ -8,19 +8,19 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ExtendWith(SpringExtension.class)
-class PasswordEncoderTest {
+class CustomPasswordEncoderTest {
 
     @InjectMocks
-    private PasswordEncoder passwordEncoder;
+    private CustomPasswordEncoder customPasswordEncoder;
 
     @Test
     void matches_메서드가_정상적으로_동작한다() {
         // given
         String rawPassword = "testPassword";
-        String encodedPassword = passwordEncoder.encode(rawPassword);
+        String encodedPassword = customPasswordEncoder.encode(rawPassword);
 
         // when
-        boolean matches = passwordEncoder.matches(encodedPassword, rawPassword);
+        boolean matches = customPasswordEncoder.matches(encodedPassword, rawPassword);
 
         // then
         assertTrue(matches);
